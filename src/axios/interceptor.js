@@ -21,10 +21,9 @@ instance.interceptors.response.use(
           "Authorization"
         ] = `Bearer ${response.data.access}`;
         return instance(error.config);
-      } else if (error.response.status === 401) {
-        window.location.href = "/login/";
       }
     }
+
     refresh = false;
     return error;
   }
